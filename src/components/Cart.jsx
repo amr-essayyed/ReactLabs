@@ -1,6 +1,5 @@
 import '../style.css'
 import CartItem from './CartItem';
-import {useState} from 'react';
 
 
 export default function Cart(props){

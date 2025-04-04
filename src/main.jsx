@@ -1,5 +1,3 @@
-// import { StrictMode } from 'react'
-// import './index.css'
 import App from './App.jsx';
 import { BrowserRouter, Route } from "react-router";
 

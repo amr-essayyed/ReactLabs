@@ -7,7 +7,7 @@ export default function CartItem(prop){
    
 
     return (
-        <tr className="bg-blue-400">
+        <tr className="">
             <td>{prop.id}</td>
             <td>{prop.name}</td>
             <td>{prop.count}</td>
