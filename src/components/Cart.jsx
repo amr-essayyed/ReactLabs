@@ -7,7 +7,7 @@ export default function Cart(props){
   console.log(props.pad);
   
   return (
-    <div className={`px-${props.pad}`}>
+    <div className={`px-[9rem]`}>
       <table className="table-auto w-full text-4xl ">
         <thead className="text-left">
           <tr>

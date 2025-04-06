@@ -1,11 +1,6 @@
-import React from 'react'
 import '../style.css'
 
 export default function CartItem(prop){
-    // const [count, setCount] = React.useState(prop.count);
-
-   
-
     return (
         <tr className="">
             <td>{prop.id}</td>

@@ -2,8 +2,10 @@ import React from 'react'
 import {Link} from 'react-router'
 
 export default function Navbar(props) { // 
+  console.log(props.pad);
+  
   return (
-    <div className={`navbar bg-base-100 shadow-sm px-${props.pad}`}> 
+    <div className={`navbar bg-base-100 shadow-sm px-[9rem]`}> 
       <div className="flex-1">
         <a className="btn btn-ghost text-xl">ASSOUQ</a>
       </div>
