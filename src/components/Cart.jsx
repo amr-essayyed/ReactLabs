@@ -2,9 +2,11 @@ import '../style.css'
 import CartItem from './CartItem';
 
 
-export default function Cart(props){
+export default function Cart(props){  
+  console.log("rendering cart");
 
-  console.log(props.pad);
+  if(props.loading) return <div>loading...</div>
+
   
   return (
     <div className={`px-[9rem]`}>
@@ -21,7 +23,7 @@ export default function Cart(props){
         </thead>
         <tbody>
           {
-            props.orders.map( (ord)=> <CartItem key={ord.id} id={ord.id} name={ord.name} count={ord.count} incCount={props.incCount} decCount={props.decCount} delOrder={props.delOrder} /> )
+            props.cartedProducts.map( (prod)=> <CartItem key={prod.id} id={prod.id} name={prod.name} count={prod.carted} incCount={props.incCount} decCount={props.decCount} delOrder={props.delOrder} /> )
           }
         </tbody>
       </table>

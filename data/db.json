@@ -1,0 +1,65 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "category": "3",
+      "name": "water",
+      "count": 0,
+      "price": 3
+    },
+    {
+      "id": "2",
+      "category": "1",
+      "name": "burger",
+      " count": 2,
+      "price": 20
+    },
+    {
+      "id": "3",
+      "category": "2",
+      "name": "potato",
+      " count": 1,
+      "price": 5
+    },
+    {
+      "id": "4",
+      "category": "2",
+      "name": "chips",
+      " count": 1,
+      "price": 6
+    },
+    {
+      "id": "5",
+      "category": "1",
+      "name": "kabab",
+      " count": 4,
+      "price": 50
+    },
+    {
+      "id": "6",
+      "category": "2",
+      "name": "fries",
+      " count": 4,
+      "price": 6
+    }
+  ],
+  "categories": {
+    "1": "meat",
+    "2": "carbs",
+    "3": "supplementary"
+  },
+  "users": [
+    {
+      "id": "1",
+      "name": "ahmed1",
+      "password": "hasedPsss",
+      "cart": {
+        "1": 2,
+        "2": 1,
+        "3": 2,
+        "4": 1,
+        "6": 3
+      }
+    }
+  ]
+}

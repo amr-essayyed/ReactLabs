@@ -1,14 +1,16 @@
 import '../style.css'
 
-export default function CartItem(prop){
+export default function CartItem(props){
+    console.log("rendering cart item");
+    
     return (
         <tr className="">
-            <td>{prop.id}</td>
-            <td>{prop.name}</td>
-            <td>{prop.count}</td>
-            <td><button onClick={()=>prop.incCount(prop.id)} className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">+</button></td>
-            <td><button onClick={()=>prop.decCount(prop.id)} className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">-</button></td>
-            <td><button onClick={()=>prop.delOrder(prop.id)} className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">x</button></td>
+            <td>{props.id}</td>
+            <td>{props.name}</td>
+            <td>{props.count}</td>
+            <td><button onClick={()=>props.incCount(props.id)} className="btn btn-success">+</button></td>
+            <td><button onClick={()=>props.decCount(props.id)} className="btn btn-warning">-</button></td>
+            <td><button onClick={()=>props.delOrder(props.id)} className="btn btn-error">x</button></td>
         </tr>
 
     )
