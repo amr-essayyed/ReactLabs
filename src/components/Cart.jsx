@@ -3,7 +3,7 @@ import CartItem from './CartItem';
 
 
 export default function Cart(props){  
-  console.log("rendering cart");
+  console.log("rendering cart: 🟢");
 
   if(props.loading) return <div>loading...</div>
 
@@ -23,7 +23,7 @@ export default function Cart(props){
         </thead>
         <tbody>
           {
-            props.cartedProducts.map( (prod)=> <CartItem key={prod.id} id={prod.id} name={prod.name} count={prod.carted} incCount={props.incCount} decCount={props.decCount} delOrder={props.delOrder} /> )
+            props.cartedProducts.map( (prod)=> <CartItem key={prod.id} id={prod.id} name={prod.title} count={prod.carted} incCount={props.incCount} decCount={props.decCount} delOrder={props.delOrder} /> )
           }
         </tbody>
       </table>

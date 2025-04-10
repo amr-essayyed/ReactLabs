@@ -1,11 +1,23 @@
 import React from 'react'
 
-export default function Pagination({Npages, currentPage}) {
-    console.log("🟢Npages: ", Npages);
-    console.log("🟢currentPage: ", currentPage);
-    
-    // [1][..][prev][curr][next][..][Npages] // 7 blocks
-  return <div className="flex float-end gap-1 mt-4">{blocking(Npages, currentPage).map((i, j) => <div key={j} className={i==currentPage?"bg-success btn":"btn"}>{i}</div>)}</div>;
+export default function Pagination({ Npages, currentPage, turnPage }) {
+  console.log("🟢Npages: ", Npages);
+  console.log("🟢currentPage: ", currentPage);
+
+  // [1][..][prev][curr][next][..][Npages] // 7 blocks
+  return (
+    <div className="flex float-end gap-1 mt-4">
+      {blocking(Npages, currentPage).map((i, j) => (
+        <div
+          key={j}
+          className={i == currentPage ? "bg-success btn" : (i===".."?"disabled pointer-events-none":"btn")}
+          onClick={()=>turnPage(i)}
+        >
+          {i}
+        </div>
+      ))}
+    </div>
+  );
 }
 
 function range(start, end) {
@@ -13,7 +25,7 @@ function range(start, end) {
 }
 
 function blocking(Npages, currentPage){
-    console.log("🟢currentPage", currentPage);
+    // console.log("🟢currentPage", currentPage);
     
     let blockes;
     

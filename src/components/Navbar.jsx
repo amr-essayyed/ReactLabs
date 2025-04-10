@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router'
+import {Link, NavLink} from 'react-router'
 
 export default function Navbar(props) { // 
   // console.log(props.pad);
@@ -7,14 +7,14 @@ export default function Navbar(props) { //
   return (
     <div className={`navbar bg-base-100 shadow-sm px-[9rem]`}> 
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl">ASSOUQ</a>
+        <NavLink to="/" className="btn btn-ghost text-xl">ASSOUQ</NavLink>
       </div>
         {/* className="hidden lg:flex" */}
       <div className="navbar-center flex">
         <ul className="menu menu-horizontal px-1">
-          <li><Link to="/">Main</Link></li>
-          <li><Link to="/home">Home</Link></li>
-          <li><Link to="/cart">Cart</Link></li>
+          {/* <li><NavLink to="/" className={({ isActive }) => isActive ? "font-bold bg-accent" : ""}>Main</NavLink></li> */}
+          <li><NavLink to="/home" className={({ isActive }) => isActive ? "font-bold bg-accent" : ""}>Home</NavLink></li>
+          <li><NavLink to="/cart" className={({ isActive }) => isActive ? "font-bold bg-accent" : ""}>Cart</NavLink></li>
         </ul>
       </div>
       <div className="flex-none">
