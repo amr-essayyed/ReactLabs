@@ -360,7 +360,7 @@ function App() {
           
           <Route 
             path="/editproduct"
-            element={<EditProduct addOrEdit={"Edit"} hndlUpdateProduct={hndlUpdateProduct} categories={categories} />}
+            element={<EditProduct  hndlUpdateProduct={hndlUpdateProduct} categories={categories} />}
           />
 
           <Route path="*" element={<Error />} />

@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { useLocation } from 'react-router';
 
 
-export default function EditProduct({addOrEdit, hndlUpdateProduct, categories}) {
+export default function EditProduct({hndlUpdateProduct, categories}) {
     const refName = useRef()
     const refPrice = useRef()
     const refImg = useRef()
@@ -14,7 +14,7 @@ export default function EditProduct({addOrEdit, hndlUpdateProduct, categories}) 
 
     return (
     <form className="p-7">
-      <h1> {addOrEdit} Product </h1>
+      <h1> Edit Product </h1>
       {/* title */}
       <fieldset className="fieldset">
         <legend className="fieldset-legend">Product Title</legend>
@@ -44,7 +44,7 @@ export default function EditProduct({addOrEdit, hndlUpdateProduct, categories}) 
       {/* thumpnail */}
       <fieldset className="fieldset">
         <legend className="fieldset-legend" required>Product Image</legend>
-        <input type="url" className="input" placeholder="Type here" ref={refImg}/>
+        <input type="url" className="input" placeholder="Type here" defaultValue={oldProduct.thumbnail} ref={refImg}/>
         <p className="fieldset-label">Optional</p>
       </fieldset>
       <button type="submit" className="btn btn-success" 
@@ -55,7 +55,7 @@ export default function EditProduct({addOrEdit, hndlUpdateProduct, categories}) 
                 hndlUpdateProduct({id:oldProduct.id, title:refName.current.value, category:refCategory.current.value, price:refPrice.current.value, thumbnail:refImg.current.value})
             }
       }
-      >{addOrEdit || "Add"}</button>
+      >Update</button>
     </form>
   );
 }
