@@ -44,7 +44,7 @@ export default function EditProduct({addOrEdit, hndlUpdateProduct, categories}) 
       {/* thumpnail */}
       <fieldset className="fieldset">
         <legend className="fieldset-legend" required>Product Image</legend>
-        <input type="file" className="file-input" placeholder="Type here" />
+        <input type="url" className="input" placeholder="Type here" ref={refImg}/>
         <p className="fieldset-label">Optional</p>
       </fieldset>
       <button type="submit" className="btn btn-success" 
@@ -52,7 +52,7 @@ export default function EditProduct({addOrEdit, hndlUpdateProduct, categories}) 
         (e)=>
             {
                 e.preventDefault();
-                hndlUpdateProduct({id:oldProduct.id, title:refName.current.value, category:refCategory.current.value, price:refPrice.current.value})
+                hndlUpdateProduct({id:oldProduct.id, title:refName.current.value, category:refCategory.current.value, price:refPrice.current.value, thumbnail:refImg.current.value})
             }
       }
       >{addOrEdit || "Add"}</button>

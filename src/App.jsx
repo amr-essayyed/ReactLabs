@@ -243,9 +243,9 @@ function App() {
     console.log("🟢addprod: ", product);
     
     //* client-side edit
-    const tempProducts = [...products];
-    tempProducts.push(product);  
-    setProducts(tempProducts);
+    // const tempProducts = [...products];
+    // tempProducts.push(product);  
+    // setProducts(tempProducts);
     
     //* server-side edit req
     axios.post(`http://localhost:3000/products`, product)
@@ -264,12 +264,12 @@ function App() {
     console.log("🟢🟢📩");
     
     const prodI = products.findIndex((prd)=>prd.id==product.id);
-    const tempProduct = {...products[prodI], title:product.title, category:product.category, price:product.price};
+    const tempProduct = {...products[prodI], title:product.title, category:product.category, price:product.price, thumbnail:product.thumbnail};
     const tempProducts = [...products];
     tempProducts[prodI] = tempProduct;
     setProducts(tempProducts);
 
-    axios.patch(`http://localhost:3000/products/${product.id}`, {title:product.title, category:product.category, price:product.price})
+    axios.patch(`http://localhost:3000/products/${product.id}`, {title:product.title, category:product.category, price:product.price, thumbnail:product.thumbnail})
     .then((response)=> {
       console.log("add product response: ", response);
       navigate("/admin");
@@ -301,8 +301,8 @@ function App() {
                 Welcome
               </div>
               <div className="flex justify-center gap-7 text-4xl">
-                <NavLink to="/admin" className="link-hover">Admin</NavLink>
-                <NavLink to="/home" className="link-hover link-accent">User</NavLink>
+                <a href="/admin" className="link-hover">Admin</a>
+                <a href="/home" className="link-hover link-accent">User</a>
               </div>
               </div>
             }
