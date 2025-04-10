@@ -249,7 +249,7 @@ function App() {
     
     //* server-side edit req
     axios.post(`http://localhost:3000/products`, product)
-    .then( (response) => { console.log("add product response: ", response); })
+    .then( (response) => { console.log("add product response: ", response); navigate("/admin"); })
     .catch((error) => { console.log("add product res error: ", error); });
   }
   
